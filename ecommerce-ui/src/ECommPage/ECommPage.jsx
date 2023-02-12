@@ -41,7 +41,7 @@ const ECommPage = ({ vacationRentals, cartRentals, addToCart, removeFromCart }) 
           <Box>
             <Grid container direction="column" border={1}>
               <Grid item>
-              <VacRentalCartGridList rentalList={cartRentals} removeFromCart={removeFromCart} />
+              <VacRentalCartGridList cartRentals={cartRentals} removeFromCart={removeFromCart} />
             </Grid>
             <Divider></Divider>
             <Grid item>

@@ -15,18 +15,19 @@ function App() {
   }
 
   const removeFromCart = (rental) => {
-    let newCartList = [...cartRentals];
-    newCartList.pop(rental);
+    let newCartList = cartRentals.filter(currentRental =>
+      currentRental.title !== rental.title
+    )
     setCartRentals(newCartList);
 
   }
   return (
     <div className="App">
-      <ECommPage 
-      vacationRentals={vacationRentals} 
-      cartRentals={cartRentals}
-      addToCart={addToCart} 
-      removeFromCart={removeFromCart} />
+      <ECommPage
+        vacationRentals={vacationRentals}
+        cartRentals={cartRentals}
+        addToCart={addToCart}
+        removeFromCart={removeFromCart} />
     </div>
   );
 }

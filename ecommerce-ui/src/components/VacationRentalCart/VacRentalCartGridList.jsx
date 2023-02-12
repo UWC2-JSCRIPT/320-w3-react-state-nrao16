@@ -2,8 +2,8 @@ import React from 'react';
 import VacRentalCartCard from './VacRentalCartCard';
 import { Grid } from '@mui/material';
 
-const VacRentalCartGridList = ({ rentalList, removeFromCart }) => {
-    let rentalListGrid = rentalList.map((rental) => {
+const VacRentalCartGridList = ({ cartRentals, removeFromCart }) => {
+    let rentalListGrid = cartRentals.map((rental) => {
         return (
             <Grid item >
                 <VacRentalCartCard
