@@ -27,10 +27,6 @@ function App() {
       cartRentals={cartRentals}
       addToCart={addToCart} 
       removeFromCart={removeFromCart} />
-      {/* <Button variant="contained"
-      disabled
-      onClick={()=> console.log("click event")}>
-        First MUI Component</Button> */}
     </div>
   );
 }
