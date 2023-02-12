@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { Box, Grid, Stack, Paper, createTheme, ThemeProvider, Divider } from '@mui/material';
+import { Box, Grid, Stack, createTheme, ThemeProvider, Divider } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material'
 import VacationRentalGridList from '../components/VacationRental/VacationRentalGridList';
 import VacRentalCartGridList from '../components/VacationRentalCart/VacRentalCartGridList';

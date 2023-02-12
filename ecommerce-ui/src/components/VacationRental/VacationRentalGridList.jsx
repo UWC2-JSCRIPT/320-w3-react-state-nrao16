@@ -1,6 +1,7 @@
 import React from 'react';
 import VacationRentalCard from './VacationRentalCard';
 import { Grid } from '@mui/material';
+import { PropTypes } from 'prop-types';
 
 const VacationRentalGridList = ({ rentalList, addToCart }) => {
     let rentalListGrid = rentalList.map((rental) => {
@@ -15,5 +16,10 @@ const VacationRentalGridList = ({ rentalList, addToCart }) => {
     });
     return rentalListGrid;
 }
+
+VacationRentalGridList.propTypes = {
+    rentalList: PropTypes.number.required,
+    addToCart: PropTypes.func
+};
 
 export default VacationRentalGridList;

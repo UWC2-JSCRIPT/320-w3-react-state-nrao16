@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { PropTypes } from 'prop-types';
 import { Button, Card, Grid, CardContent, Typography, Box } from '@mui/material';
 
 const CartTotalCard = ({ totalCost }) => {
@@ -23,6 +24,10 @@ const CartTotalCard = ({ totalCost }) => {
             </Box>
         </>
     )
+}
+
+CartTotalCard.propTypes = {
+    totalCost: PropTypes.number
 }
 
 export default CartTotalCard

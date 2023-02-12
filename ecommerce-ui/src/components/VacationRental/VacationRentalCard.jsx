@@ -1,7 +1,8 @@
 import React from 'react'
 import { Button, Card, CardHeader, CardActions, CardContent, CardMedia } from '@mui/material';
 import { Typography, Box, Rating, Avatar, Tooltip } from '@mui/material';
-import { deepOrange, deepPurple } from '@mui/material/colors';
+import { deepOrange } from '@mui/material/colors';
+import { PropTypes } from 'prop-types';
 
 const VacationRentalCard = ({ rental,
   rental: { title, houseType, image, location, payment, host, rating },
@@ -51,6 +52,32 @@ const VacationRentalCard = ({ rental,
       </Card>
     </Box>
   )
+}
+
+VacationRentalCard.propTypes = {
+  rental: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    houseType: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    location: PropTypes.shape({
+      city: PropTypes.string.isRequired,
+      country: PropTypes.string.isRequired,
+    }),
+    payment: PropTypes.shape({
+      cost: PropTypes.number.isRequired,
+      description: PropTypes.string,
+    }),
+    host: PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      isSuperhost: PropTypes.bool,
+    }),
+    rating: PropTypes.shape({
+      stars: PropTypes.number,
+      reviews: PropTypes.number,
+    }),
+  }),
+  addToCart: PropTypes.func
 }
 
 export default VacationRentalCard
