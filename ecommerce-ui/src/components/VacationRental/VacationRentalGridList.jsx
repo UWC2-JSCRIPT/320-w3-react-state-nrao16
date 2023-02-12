@@ -18,7 +18,7 @@ const VacationRentalGridList = ({ rentalList, addToCart }) => {
 }
 
 VacationRentalGridList.propTypes = {
-    rentalList: PropTypes.number.required,
+    rentalList: PropTypes.array,
     addToCart: PropTypes.func
 };
 
