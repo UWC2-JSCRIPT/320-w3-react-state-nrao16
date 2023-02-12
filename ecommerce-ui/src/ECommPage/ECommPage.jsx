@@ -6,11 +6,29 @@ import VacationRentalGridList from '../components/VacationRental/VacationRentalG
 import VacRentalCartGridList from '../components/VacationRentalCart/VacRentalCartGridList';
 import CartTotalCard from '../components/CartTotal/CartTotalCard';
 import VacRentalAppBar from '../components/AppBar/VacRentalAppBar';
-
+import bnbs from '../bnbs.json';
 
 const theme = createTheme();
 
-const ECommPage = ({ vacationRentals, cartRentals, addToCart, removeFromCart }) => {
+const ECommPage = () => {
+
+  const [vacationRentals, setVacationRentals] = useState(bnbs);
+  const [cartRentals, setCartRentals] = useState([]);
+
+  const addToCart = (rental) => {
+    let newCartList = [...cartRentals];
+    newCartList.push(rental);
+    setCartRentals(newCartList);
+
+  }
+
+  const removeFromCart = (rental) => {
+    let newCartList = cartRentals.filter(currentRental =>
+      currentRental.id !== rental.id
+    )
+    setCartRentals(newCartList);
+
+  }
 
   const cartRentalsExist = cartRentals?.length > 0;
   const gridItemBreakpoint = cartRentalsExist ? 10 : 12;
@@ -38,17 +56,17 @@ const ECommPage = ({ vacationRentals, cartRentals, addToCart, removeFromCart }) 
 
         {cartRentalsExist &&
           <Grid container item xs={2} sm={2} md={2}>
-          <Box>
-            <Grid container direction="column" border={1}>
-              <Grid item>
-              <VacRentalCartGridList cartRentals={cartRentals} removeFromCart={removeFromCart} />
-            </Grid>
-            <Divider></Divider>
-            <Grid item>
-              <Stack>
-                <CartTotalCard totalCost={calculateCartTotal()} />
-              </Stack>
-              </Grid>
+            <Box>
+              <Grid container direction="column" border={1}>
+                <Grid item>
+                  <VacRentalCartGridList cartRentals={cartRentals} removeFromCart={removeFromCart} />
+                </Grid>
+                <Divider></Divider>
+                <Grid item>
+                  <Stack>
+                    <CartTotalCard totalCost={calculateCartTotal()} />
+                  </Stack>
+                </Grid>
               </Grid>
             </Box>
           </Grid>
