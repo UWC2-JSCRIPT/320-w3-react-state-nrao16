@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useState } from 'react';
-import { Box, Grid, Stack, Paper, createTheme, ThemeProvider } from '@mui/material';
+import { Box, Grid, Stack, Paper, createTheme, ThemeProvider, Divider } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material'
 import VacationRentalGridList from '../components/VacationRental/VacationRentalGridList';
 import VacRentalCartGridList from '../components/VacationRentalCart/VacRentalCartGridList';
@@ -38,13 +38,18 @@ const ECommPage = ({ vacationRentals, cartRentals, addToCart, removeFromCart }) 
 
         {cartRentalsExist &&
           <Grid container item xs={2} sm={2} md={2}>
-            <Grid container item direction="column">
+          <Box>
+            <Grid container direction="column" border={1}>
+              <Grid item>
               <VacRentalCartGridList rentalList={cartRentals} removeFromCart={removeFromCart} />
             </Grid>
-            <Box>
+            <Divider></Divider>
+            <Grid item>
               <Stack>
                 <CartTotalCard totalCost={calculateCartTotal()} />
               </Stack>
+              </Grid>
+              </Grid>
             </Box>
           </Grid>
         }

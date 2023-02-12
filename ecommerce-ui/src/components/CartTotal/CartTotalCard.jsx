@@ -8,7 +8,7 @@ const CartTotalCard = ({ totalCost }) => {
                 <Grid container direction='column'>
                     <Grid item xs={6} sm={6} md={6}>
                         <Card
-                            sx={{ height: '100%', display: 'flex', flexDirection: 'column', backgroundColor: 'aliceblue' }}>
+                            sx={{ height: '100%', display: 'flex', flexDirection: 'column'}}>
                             <CardContent>
                                 <Typography variant="h5">
                                     Total Payment Due ${Number.parseFloat(totalCost).toFixed(2)}

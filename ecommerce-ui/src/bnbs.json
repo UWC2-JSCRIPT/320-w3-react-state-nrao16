@@ -61,5 +61,47 @@
             "stars": 5,
             "reviews": 83
         }
+    },
+    {
+        "title": "Cozy 2-bedroom apartment",
+        "houseType": "Apartment",
+        "image": "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8YXBhcnRtZW50fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=2000&q=60",
+        "location": {
+            "city": "New York",
+            "country": "USA"
+        },
+        "payment": {
+            "cost": 400,
+            "description": "Free cancellation"
+        },
+        "host": {
+            "name": "Cecil",
+            "isSuperhost": true
+        },
+        "rating": {
+            "stars": 3.5,
+            "reviews": 45
+        }
+    },
+    {
+        "title": "Gorgeous apartment overlooking La Sagrada Familia",
+        "houseType": "Apartment",
+        "image": "https://images.unsplash.com/photo-1626927504431-f50082c94de1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGFwYXJ0bWVudCUyMGJhcmNlbG9uYSUyMHNhZ3JhZGF8ZW58MHx8MHx8&auto=format&fit=crop&w=2000&q=60",
+        "location": {
+            "city": "Barcelona",
+            "country": "Spain"
+        },
+        "payment": {
+            "cost": 500,
+            "description": ""
+        },
+        "host": {
+            "name": "Lucia",
+            "isSuperhost": true
+        },
+        "rating": {
+            "stars": 5,
+            "reviews": 100
+        }
     }
 ]
