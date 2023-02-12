@@ -6,7 +6,7 @@ import { PropTypes } from 'prop-types';
 const VacRentalCartGridList = ({ cartRentals, removeFromCart }) => {
     let rentalListGrid = cartRentals.map((rental) => {
         return (
-            <Grid item >
+            <Grid item key={rental.id}>
                 <VacRentalCartCard
                     rental={rental}
                     removeFromCart={removeFromCart}

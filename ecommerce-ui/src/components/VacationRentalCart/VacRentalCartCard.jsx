@@ -7,7 +7,7 @@ const VacRentalCartCard = ({ rental,
   removeFromCart }
 ) => {
   return (
-    <Box>
+    <Box boxShadow={10}>
       <Card variant=''
         sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}>
         <CardContent sx={{ display: 'flex', justifyContent: 'space-between', direction: 'row' }}>

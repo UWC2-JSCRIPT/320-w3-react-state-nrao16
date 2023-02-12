@@ -6,7 +6,7 @@ import { PropTypes } from 'prop-types';
 const VacationRentalGridList = ({ rentalList, addToCart }) => {
     let rentalListGrid = rentalList.map((rental) => {
         return (
-            <Grid item xs={12} sm={6} md={4}>
+            <Grid item xs={12} sm={6} md={4} key={rental.id}>
                 <VacationRentalCard
                     rental={rental}
                     addToCart={addToCart}
