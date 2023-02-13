@@ -5,7 +5,7 @@ import { Button, Card, Grid, CardContent, Typography, Box } from '@mui/material'
 const CartTotalCard = ({ totalCost }) => {
     return (
         <>
-            <Box sx={{ display: 'flex', alignItems: 'center', p: 2 }}>
+            <Box sx={{ display: 'flex', flexDirection: 'column'}}>
                 <Grid container direction='column'>
                     <Grid item xs={6} sm={6} md={6}>
                         <Card

@@ -47,17 +47,17 @@ const ECommPage = () => {
       <Box>
         <VacRentalAppBar />
       </Box>
-      <Grid container>
+      <Grid container spacing={4}>
 
         <Grid container item xs={gridItemBreakpoint} sm={gridItemBreakpoint} md={gridItemBreakpoint}
         >
-          <VacationRentalGridList rentalList={vacationRentals} addToCart={addToCart} />
+          <VacationRentalGridList rentalList={vacationRentals} addToCart={addToCart} cartRentals={cartRentals} />
         </Grid>
 
         {cartRentalsExist &&
           <Grid container item xs={2} sm={2} md={2}>
             <Box>
-              <Grid container direction="column" border={1}>
+              <Grid container direction="column">
                 <CartHeaderBar />
                 <Grid item>
                   <VacRentalCartGridList cartRentals={cartRentals} removeFromCart={removeFromCart} />

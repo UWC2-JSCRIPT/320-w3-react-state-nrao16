@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { useState } from 'react';
 import { Button, Card, CardHeader, CardActions, CardContent, CardMedia } from '@mui/material';
 import { Typography, Box, Rating, Avatar, Tooltip } from '@mui/material';
 import { deepOrange } from '@mui/material/colors';
@@ -6,7 +7,10 @@ import { PropTypes } from 'prop-types';
 
 const VacationRentalCard = ({ rental,
   rental: { title, houseType, image, location, payment, host, rating },
-  addToCart }) => {
+  addToCart,
+  cartRentals }) => {
+
+  const isInCartRentals = () => { return cartRentals?.some(cartRental => cartRental.id === rental.id) };
 
   return (
     <Box>
@@ -22,7 +26,7 @@ const VacationRentalCard = ({ rental,
           image={image}
           alt={`Picture of ${title}`}
         />
-        <CardContent sx={{ display: 'flex', justifyContent: 'space-between', direction: 'row'}}>
+        <CardContent sx={{ display: 'flex', justifyContent: 'space-between', direction: 'row' }}>
           <Typography variant="h5">
             ${Number.parseFloat(payment.cost).toFixed(2)}
           </Typography>
@@ -34,17 +38,20 @@ const VacationRentalCard = ({ rental,
           </Typography>
         </CardContent>
         <CardContent >
-          <Typography variant="h5" sx={{ display: 'flex', height:'100%', alignContent: 'left', direction: 'row' }}>
-            {host.isSuperhost && 
-             <Tooltip title="Super Host">
-            <Avatar sx={{ bgcolor: deepOrange[500] }}>SH</Avatar>
-            </Tooltip>
+          <Typography variant="h5" sx={{ display: 'flex', height: '100%', alignContent: 'left', direction: 'row' }}>
+            {host.isSuperhost &&
+              <Tooltip title="Super Host">
+                <Avatar sx={{ bgcolor: deepOrange[500] }}>SH</Avatar>
+              </Tooltip>
             }{host.name}
           </Typography>
         </CardContent>
         <CardActions sx={{ display: 'flex', justifyContent: 'space-between', direction: 'row' }}>
-          <Button variant="contained" onClick={(event) => addToCart(rental)}>
-            Add to Cart</Button>
+          <Button variant="contained"
+            disabled={isInCartRentals()}
+            onClick={() => addToCart(rental)}>
+            {!isInCartRentals() ? "Add to Cart" : "Added to Cart"}
+          </Button>
           <Rating value={rating.stars} precision={0.5} readOnly />
           <Box sx={{ ml: 2 }}>{rating.reviews} reviews</Box>
 
@@ -77,7 +84,8 @@ VacationRentalCard.propTypes = {
       reviews: PropTypes.number,
     }),
   }),
-  addToCart: PropTypes.func
+  addToCart: PropTypes.func,
+  cartRentals: PropTypes.array
 }
 
 export default VacationRentalCard
