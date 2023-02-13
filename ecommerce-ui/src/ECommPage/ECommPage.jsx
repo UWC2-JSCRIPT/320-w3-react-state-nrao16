@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { useState } from 'react';
 import { Box, Grid, Stack, createTheme, ThemeProvider, Divider } from '@mui/material';
-import ShoppingCartIcon from '@mui/icons-material'
 import VacationRentalGridList from '../components/VacationRental/VacationRentalGridList';
 import VacRentalCartGridList from '../components/VacationRentalCart/VacRentalCartGridList';
 import CartTotalCard from '../components/CartTotal/CartTotalCard';
 import VacRentalAppBar from '../components/AppBar/VacRentalAppBar';
 import bnbs from '../bnbs.json';
+import CartHeaderBar from '../components/VacationRentalCart/CartHeaderBar';
 
 const theme = createTheme();
 
@@ -58,6 +58,7 @@ const ECommPage = () => {
           <Grid container item xs={2} sm={2} md={2}>
             <Box>
               <Grid container direction="column" border={1}>
+                <CartHeaderBar />
                 <Grid item>
                   <VacRentalCartGridList cartRentals={cartRentals} removeFromCart={removeFromCart} />
                 </Grid>
