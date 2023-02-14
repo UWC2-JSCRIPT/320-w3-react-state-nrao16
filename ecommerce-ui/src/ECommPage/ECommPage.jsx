@@ -16,17 +16,21 @@ const ECommPage = () => {
   const [cartRentals, setCartRentals] = useState([]);
 
   const addToCart = (rental) => {
-    let newCartList = [...cartRentals];
-    newCartList.push(rental);
-    setCartRentals(newCartList);
-
+    setCartRentals(prevCartList => {
+      let newCartList = [...prevCartList];
+      newCartList.push(rental);
+      return newCartList;
+    }
+    );
   }
 
   const removeFromCart = (rental) => {
-    let newCartList = cartRentals.filter(currentRental =>
-      currentRental.id !== rental.id
-    )
-    setCartRentals(newCartList);
+    setCartRentals(prevCartList => {
+      let newCartList = prevCartList.filter(currentRental =>
+        currentRental.id !== rental.id
+      )
+      return newCartList;
+    });
 
   }
 

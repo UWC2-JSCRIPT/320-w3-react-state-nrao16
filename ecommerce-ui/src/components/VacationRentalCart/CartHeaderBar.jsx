@@ -4,7 +4,7 @@ import { Toolbar, Typography } from '@mui/material';
 const CartHeaderBar = () => {
     return (
         <Toolbar sx={{ bgcolor: "inherit" }}>
-            <Typography variant="h5">Vacation Cart</Typography>
+            <Typography variant="h5" fontWeight={"bold"} >Vacation Cart</Typography>
         </Toolbar>
     )
 }
